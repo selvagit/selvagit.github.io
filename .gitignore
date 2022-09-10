@@ -10,6 +10,7 @@ logs
 # Ignore the build directory
 /dist
 /_site
+/.jekyll-cache
 
 # The file containing environment variables 
 .env
