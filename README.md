@@ -1,4 +1,6 @@
-# selvagit.github.io
+
+
+Collection of cmds for reference
 
 - [bash helper](./bash_helper.md)
 - [screen helper](./screen_helper.md)
