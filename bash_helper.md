@@ -48,11 +48,13 @@ ps -fp $(pgrep -u user1) | grep -i ut_runner
 	
 my_pid=$(ps -fp $(pgrep -u user1) | grep -i ut_runner | grep -v grep | awk '{print $2}' ) ; ls -l /proc/$my_pid/fd	
 
-# to find the files opened by a process in linux, process id need to be given	
-ls -l /proc/19454/fd
+ls -l /proc/19454/fd # to find the files opened by a process in linux, process id need to be given	
 ```	
-# list all files used by any process in the current dir, every 15 seconds	
+
+# list all files used by any process in the current dir, every 15 seconds
+```	
 watch -n 15 "lsof +D ./"
+```
 
 # tcpdump fragmentation file filter	
 
@@ -70,15 +72,20 @@ vncserver -kill :41
 ```
 
 # to list vnc session	
+```
 pgrep -fl  vnc	
-	
+```	
 
 # to set a ethernet interface for a particular size	
+```
 ifconfig eth1 mtu 9000 up	
-	
+```
+
 # indent	
+```
 indent -bbb -nprs -l120 -bli0 -i3 -nut -sob -bap -bbo -fca -lps ./roller.c && vim ./roller.c	
-	
+```
+
 # valgrid commands	
 ```
 valgrind --leak-check=yes --track-origins=yes --leak-check=full --show-reachable=yes --db-attach=yes --freelist-vol=2000000 --log-file=./memleak.txt -v ./demo ./gtf	
@@ -87,17 +94,19 @@ valgrind --leak-check=yes --track-origins=yes --leak-check=full --show-reachable
 	
 valgrind --leak-check=yes --track-origins=yes --leak-check=full --show-reachable=yes --log-file=./memleak.txt -v ./enb	
 ```
+
+# gdb
 ```
 gdb --args ./t_runner --gtest_filter=est.*	
 ```
 
-# to set the arguments to gdb, when a binary is given as	
-# input it does not consider the command line argument	
+## to set the arguments to gdb, when a binary is given as input it does not consider the command line argument	
+```
 set args -k3 caesar.cpp out.txt	
-	
+```
+
 # finding os version	
 lsb_release -a	
-
 
 # to download a website	
 ```
@@ -109,10 +118,10 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent -
 ```
 
 # core pattern
+```
 sysctl kernel.core_pattern	
 echo "/media/userdata/core.%e.%p.%h.%t" > /proc/sys/kernel/core_pattern	
-
-killall -SIGSEGV sleep	
+```
 
 # meta character clean up 
 ```	
@@ -121,4 +130,6 @@ perl -pi -e 's/\r\n/\n/g' test.cpp
 ```	
 
 # reading the elf file
+```
 readelf -a ./exec	
+```
