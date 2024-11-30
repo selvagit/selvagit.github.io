@@ -9,9 +9,9 @@
 - screen -r  2477.pts-0.server1 -> reconnect to session 2477.pts-0.server1	
 
 # remove the screen session	
-rm -rf /var/run/screen/selva/*	
+- rm -rf /var/run/screen/selva/*	
 
 # tmux 
-tmux ls
-tmux kill-session -t 0
-tmux attach -d
+- tmux ls
+- tmux kill-session -t 0
+- tmux attach -d
