@@ -1,16 +1,23 @@
 # grep commands
+
+```
 grep -i diff ./temp.txt | awk '{print $3}' | sed  's/a/\./' > diff_file.txt ; vim $(cat diff_file.txt)	for getting the diff file
 grep -rl INFO ./temp/ | xargs sed -i 's/INFO/TRACE/g'	
+```
 
 # find examples	
+
+```
 find /home/you -iname "*.txt" -mtime -60 -print	
 find ./ -maxdepth 1 -type d	
 find -maxdepth 1 -type d -ls;	
+```
 
+```
 find ./ -name "*.o" -exec nm {} \; | grep handler 	#method to find a particular symbol is present in obj file
 find ./ -iname *.cpp -exec grep -Hn -i dispatch {} \;	
 find ./ -iname '*.h' -o -iname '*.cpp' |xargs  grep -Hn -i dispatch >dump.txt	
-	
+```	
 find -amin -$(bc <<< 60*10) -iname *.xml	# for finding the file which changed in past 10 hours
 
 # for find the a partiuclar class / obj being used	
@@ -94,7 +101,6 @@ sysctl kernel.core_pattern
 echo "/media/userdata/core.%e.%p.%h.%t" > /proc/sys/kernel/core_pattern	
 
 killall -SIGSEGV sleep	
-	
 	
 tr -cd '\11\12\15\40-\176' < file-with-binary-chars > clean-file	
 	
