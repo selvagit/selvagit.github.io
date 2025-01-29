@@ -1,7 +1,6 @@
 # Remote debugging
 
-gdb remote functionality will be used for debugging 
-
+gdb remote functionality can be used for debugging when the target does not the necessary src code 
 - the gdb must be run on the target as “gdbserver 0.0.0.0:3000 ./foo”
   - where 
     - “0.0.0.0” is the localhost 
