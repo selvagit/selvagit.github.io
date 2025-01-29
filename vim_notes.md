@@ -38,3 +38,59 @@ This page will contain the relevant link for VIM editor
 - [Vim-Katas](https://github.com/adomokos/Vim-Katas/tree/master/exercises) , a series of excercise for parctising movment
 
   
+# Examples 
+
+
+-  Key binding
+```
+map <F12> :!python ./test.py <CR>	-  vim : to map a key for excutions
+```
+
+-  To remove the ^M characters at the end of all lines in vi.  
+```
+:%s/^V^M//g
+```
+    - The ^v is a CONTROL-V character and ^m is a CONTROL-M. When you type this, it will look like this %s/^M//g
+
+- To open muliple files in vim   	
+
+```
+cat file | xargs vim
+```
+
+-  To delete a range of buffer	
+```
+:N,Mbdelete[!] , delete a range of buffer	
+```
+
+- Do a deep directory search for the files with extension '.cpp' and open the files	
+:n **/*.cpp  
+	
+-  For reading the shell command and collect the output to the vim buffer	
+```
+r ! ls -1 /home/user/directory | sort -r	
+```
+
+-  Bashrc default editor setting	
+```
+export EDITOR='vim'	
+```
+-  Reload active VIMRC without quitting the vim	
+```
+so $MYVIMRC	
+```
+
+-  Command combo for replacing in multiple file	
+```
+arg ./src/**/*.cpp	
+argdo %s/open/cc\.cOpen/gc	
+```
+
+-  Moving across tabs	
+```
+gt            go to next tab	
+gT            go to previous tab	
+{i}gt         go to tab in position i	
+Ctrl-PgDn     go to next tab	
+Ctrl-PgUp     go to previous tab
+```
